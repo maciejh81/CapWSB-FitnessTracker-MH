@@ -29,4 +29,13 @@ public class Statistics {
     @Column(name = "total_calories_burned")
     private int totalCaloriesBurned;
 
+    public static Statistics create(User user, int totalTrainings, double totalDistance, int totalCaloriesBurned) {
+        Statistics statistics = new Statistics();
+        statistics.setUser(user);
+        statistics.setTotalTrainings(totalTrainings);
+        statistics.setTotalDistance(totalDistance);
+        statistics.setTotalCaloriesBurned(totalCaloriesBurned);
+        return statistics;
+    }
+
 }
