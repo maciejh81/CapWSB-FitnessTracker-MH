@@ -52,27 +52,27 @@ class InitialDataLoader {
         log.info("Finished loading initial data");
     }
 
-    private User generateUser(String name, String lastName, int age) {
+    private User generateUser(String name, String lastName, int age, String mail) {
         User user = new User(name,
                              lastName,
                              now().minusYears(age),
-                             "%s.%s@domain.com".formatted(name, lastName));
+                             mail);
         return userRepository.save(user);
     }
 
     private List<User> generateSampleUsers() {
         List<User> users = new ArrayList<>();
 
-        users.add(generateUser("Emma", "Johnson", 28));
-        users.add(generateUser("Ethan", "Taylor", 51));
-        users.add(generateUser("Olivia", "Davis", 76));
-        users.add(generateUser("Daniel", "Thomas", 34));
-        users.add(generateUser("Sophia", "Baker", 49));
-        users.add(generateUser("Liam", "Jones", 23));
-        users.add(generateUser("Ava", "Williams", 21));
-        users.add(generateUser("Noah", "Miller", 39));
-        users.add(generateUser("Grace", "Anderson", 33));
-        users.add(generateUser("Oliver", "Swift", 29));
+        users.add(generateUser("Emma", "Johnson", 28,"maciej@xxl.pl"));
+        users.add(generateUser("Ethan", "Taylor", 51,"test1@domain.com"));
+        users.add(generateUser("Olivia", "Davis", 76,"test2@domain.com"));
+        users.add(generateUser("Daniel", "Thomas", 34,"test3@domain.com"));
+        users.add(generateUser("Sophia", "Baker", 49,"test4@domain.com"));
+        users.add(generateUser("Liam", "Jones", 23,"test5@domain.com"));
+        users.add(generateUser("Ava", "Williams", 21,"test6@domain.com"));
+        users.add(generateUser("Noah", "Miller", 39,"test7@domain.com"));
+        users.add(generateUser("Grace", "Anderson", 33,"test8@domain.com"));
+        users.add(generateUser("Maciej", "Hoffmann", 29, "test9@domain.pl"));
 
         return users;
     }
@@ -132,14 +132,14 @@ class InitialDataLoader {
                                               22.5,
                                               17.2);
             Training training9 = new Training(users.get(8),
-                                              sdf.parse("2024-01-11 07:15:00"),
-                                              sdf.parse("2024-01-11 08:30:00"),
+                                              sdf.parse("2024-06-15 07:15:00"),
+                                              sdf.parse("2024-06-15 08:30:00"),
                                               ActivityType.WALKING,
                                               4.2,
                                               4.5);
             Training training10 = new Training(users.get(9),
-                                               sdf.parse("2024-01-10 14:00:00"),
-                                               sdf.parse("2024-01-10 15:15:00"),
+                                               sdf.parse("2024-06-16 14:00:00"),
+                                               sdf.parse("2024-06-16 15:15:00"),
                                                ActivityType.RUNNING,
                                                11.8,
                                                8.5);
